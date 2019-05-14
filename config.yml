@@ -20,8 +20,6 @@ rules:
   single-line-per-selector: 2
 
   # Disallows
-  no-color-keywords: 0
-  no-color-literals: 2
   no-debug: 2
   no-duplicate-properties: 2
   no-empty-rulesets: 2
