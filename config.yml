@@ -4,7 +4,10 @@ options:
   merge-default-rules: false
 # File Options
 files:
-  include: 'app/styles/**/*.s+(a|c)ss'
+  include:
+    - 'styles/**/*.s+(a|c)ss'
+    - 'app/styles/**/*.s+(a|c)ss'
+    - 'addon/styles/**/*.s+(a|c)ss'
 # Rule Configuration
 rules:
   # Extends
@@ -21,20 +24,31 @@ rules:
 
   # Disallows
   no-debug: 2
-  no-duplicate-properties: 2
+  no-duplicate-properties:
+    - 2
+    -
+      exclude:
+        # To allow for fallbacks
+        # TODO(Maddie): eventually get rid of these
+        - background
+        - border
   no-empty-rulesets: 2
   no-ids: 2
   no-invalid-hex: 2
-  no-misspelled-properties: 2
-  no-mergeable-selectors: 2
+  no-misspelled-properties:
+    - 2
+    -
+      'extra-properties':
+        - 'border-'
+        - 'margin-'
+        - 'osx-font-smoothing'
+  no-mergeable-selectors: 1
   no-trailing-whitespace: 2
-  no-trailing-zero: 2
-  no-url-domains: 2
+  no-url-protocols: 2
   no-warn: 2
 
   # Nesting
-  nesting-depth: 2
-  declarations-before-nesting: 2
+  nesting-depth: 1
 
   # Name Formats
   class-name-format:
@@ -58,42 +72,37 @@ rules:
       allow-leading-underscore: false
 
   # Style Guide
-  attribute-quotes: 2
   border-zero:
-    - 2
+    - 1
     -
       convention: 'none'
-  brace-style: 2
-  clean-import-paths: 2
+  brace-style: 1
+  clean-import-paths: 1
   empty-args:
-    - 2
+    - 1
     -
       include: true
   hex-length:
-    - 2
+    - 1
     -
       style: long
-  hex-notation: 2
-  indentation: 2
+  hex-notation: 1
   leading-zero:
-    - 2
+    - 1
     -
       include: true
-  pseudo-element: 2
-  quotes: 2
-  shorthand-values: 2
-  url-quotes: 2
-  zero-unit: 2
+  quotes: 1
+  shorthand-values: 1
+  url-quotes: 1
+  zero-unit: 1
 
   # Inner Spacing
-  space-after-bang: 2
-  space-after-colon: 2
-  space-after-comma: 2
-  space-around-operator: 2
-  space-before-bang: 2
-  space-before-brace: 2
-  space-before-colon: 2
+  space-after-colon: 1
+  space-after-comma: 1
+  space-around-operator: 1
+  space-before-bang: 1
+  space-before-brace: 1
 
   # Final Items
-  trailing-semicolon: 2
-  final-newline: 2
+  trailing-semicolon: 1
+  final-newline: 1
