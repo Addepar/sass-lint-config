@@ -54,12 +54,7 @@ rules:
   class-name-format:
     - 2
     -
-      allow-leading-underscore: false
-      ignore:
-        # These are being ignored because the DOM elements are pulled in via
-        # CKEditor and we cannot control the class names
-        - 'cke_tabulation'
-        - 'cke_editable'
+      convention: strictbem
   function-name-format: 2
   mixin-name-format: 2
   placeholder-name-format:
